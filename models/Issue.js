@@ -12,6 +12,10 @@ const issueSchema = new mongoose.Schema({
     assign : {
         type : String,
         require : true
+    },
+    project : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'Project'
     }
 },{
     timestamps : true

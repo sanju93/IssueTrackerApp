@@ -1,45 +1,76 @@
-<link rel="stylesheet" href = "/css/home.css">
-<div class = "h1 m-2">Issue Tracker</div>
+  <link rel="stylesheet" href="/css/home.css">
+    <div class = "h1 m-3 text-center">Project Details</div>
 
-<div class="container my-5">
-    <div class="h3">Add Issue</div>
-    <form action = "/create" method="post">
-    <div class="row">
-     
-        <div col="12">
-            <div class="p my-2">Description</div>
-            <input type = "text" name = "desc" class="form-control">
-        </div> 
+
+    <div class ="container">
+
+        <form action ="/create_project" method = "post">
+        <div class = "row">
+            <div class="col-12 fs-3 my-3 fw-bold">
+                Title
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input type = "text" class="form-control" name="title">
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class="col-12 fs-3 my-3 fw-bold">
+                Author
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <input type = "text" class="form-control" name="author">
+            </div>
+        </div>
+
+
+        <div class = "row">
+            <div class="col-12 fs-3 my-3 fw-bold">
+                Description
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <input type = "text" class="form-control" name="desc">
+            </div>
+        </div>
+
+
+        
+        <div class = "row">
+            <div class="col-2">
+                <input type = "submit" class="btn btn-primary my-5" value = "Create Project">
+             
+            </div>
+        </div>
+
+        </form>
+
+        
 
     </div>
 
-    <div class="row">
-     
-        <div col="12">
-            <div class="p my-2">Severity</div>
-            <select class="form-select" name="severity" aria-label="Default select example">
-                <option selected>select the severity</option>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-              </select>
-        </div> 
+    <div class = "container">
+        
 
     </div>
 
-    <div class="row">
-     
-        <div col="12">
-            <div class="p my-2">Assigned To</div>
-            <input type = "text" name = "assign" class="form-control">
-        </div> 
-
-    </div>
-
-    <div class="row">
-         <div class="col-2 my-4"> <input type = "submit" value = "Add" class = "btn btn-primary"></div>
-    </div>
-    </form>
 
 
-</div>
+    <script src = "/js/home.js"></script>
+
+
+
+
+
+
+
+
+
