@@ -4,6 +4,8 @@
 
 <div class="container">
 
+    <input type = "button" class="btn btn-primary mb-5" id = "home" value = "Back To Home">
+
     <% for (var i in Issues) {%>
 
 
@@ -32,6 +34,11 @@
                     Assign to : <%= Issues[i].assign %>
                     
                 </div>
+                <div class="col-3">
+
+                    <input type = "button" class="btn btn-danger mb-4 resolve" id = "<%= i %>" value = "Resolve">
+
+                </div>
 
             </div>
 
@@ -42,7 +49,7 @@
         
     <%}%>
 
-     <input type = "button" class="btn btn-danger my-4" value = "Resolve">
+    
 
     </div>
 

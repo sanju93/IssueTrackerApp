@@ -1,3 +1,4 @@
+const { findByIdAndUpdate } = require('../models/Issue');
 const Issue = require('../models/Issue');
 const Project = require('../models/Project');
 module.exports.home = (req,res) => {
@@ -18,6 +19,7 @@ module.exports.createProject = async (req,res) => {
             author : req.body.author,
             desc : req.body.desc
           });
+         
 
     }catch(err) {
 
@@ -115,6 +117,51 @@ module.exports.getIssues = async (req,res) => {
   
 
 
+    
+
+}
+
+
+module.exports.resolveIssue =  async (req,res) => {
+    try{
+
+        var issue = await Issue.findById(req.params.id);
+
+        var project_id = issue.project;
+        var project = await Project.findById(project_id);
+         var index = project.issue.indexOf(issue._id);
+
+      
+         
+        await project.issue.splice(index,1);
+        await project.save();
+
+         await Issue.findByIdAndDelete(issue._id);
+
+        return res.sendStatus(200);
+
+    }catch(err) {
+
+        console.log("error",err);
+        return res.sendStatus(500);
+
+    }
+  
+
+}
+
+module.exports.deleteProject = async (req,res) => {
+
+    var project = await Project.findById(req.params.id);
+    if (project.issue.length == 0) {
+
+        await Project.findByIdAndDelete(project._id);
+        return res.sendStatus(200);
+
+    }else{
+            return res.sendStatus(500);
+    }
+ 
     
 
 }

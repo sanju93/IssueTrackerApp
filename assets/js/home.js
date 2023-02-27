@@ -82,7 +82,11 @@ window.addEventListener("load",() => {
         var ViewIssue = document.createElement('button');
         ViewIssue.setAttribute('id',i._id);
         ViewIssue.setAttribute('class','btn btn-success mt-5');
+      
         ViewIssue.innerHTML = "View Issue";
+        if (i.issue.length == 0) {
+            ViewIssue.setAttribute('disabled','true')
+        }
 
 
         ViewIssue.addEventListener('click',async (e) => {
@@ -102,6 +106,20 @@ window.addEventListener("load",() => {
         deleteProject.setAttribute('id',i._id);
         deleteProject.setAttribute('class','btn btn-danger mt-5');
         deleteProject.innerHTML = "Delete Project";
+       
+
+        deleteProject.addEventListener('click',async (e) => {
+         
+          
+              let id = e.target.getAttribute('id');
+              var response = await fetch(`/delete_project/${id}`,{method : 'DELETE'});
+              if (response.status == 200) {
+                location.reload();
+              }else{
+                alert("resolve all the issues");
+              }
+            
+        })
 
         Col_div_3.appendChild(deleteProject);
 
