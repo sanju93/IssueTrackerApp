@@ -1,15 +1,15 @@
-<link rel="stylesheet" href = "/css/home.css">
-<div class="h2">Create Issue</div>
+<link rel="stylesheet" href = "/css/issue.css">
+<div class="h2 text-center">Create Issue</div>
 
 
 <div class="container my-5">
     <div class="h3">Add Issue</div>
-    <form action = "/create_issue" method="post">
+    <form id = "issue_form">
     <div class="row">
      
         <div col="12">
             <div class="p my-2">Description</div>
-            <input type = "text" name = "desc" class="form-control">
+            <input type = "text" name = "desc" class="form-control" id = "desc">
         </div> 
 
     </div>
@@ -18,7 +18,7 @@
      
         <div col="12">
             <div class="p my-2">Severity</div>
-            <select class="form-select" name="severity" aria-label="Default select example">
+            <select class="form-select" name="severity" aria-label="Default select example" id="severity">
                 <option selected>select the severity</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
@@ -32,7 +32,7 @@
      
         <div col="12">
             <div class="p my-2">Assigned To</div>
-            <input type = "text" name = "assign" class="form-control">
+            <input type = "text" name = "assign" class="form-control" id = "assign">
         </div> 
 
     </div>
@@ -44,3 +44,7 @@
 
 
 </div>
+
+<script src="/js/issue.js"></script>
+
+

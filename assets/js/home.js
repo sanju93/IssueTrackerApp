@@ -84,6 +84,15 @@ window.addEventListener("load",() => {
         ViewIssue.setAttribute('class','btn btn-success mt-5');
         ViewIssue.innerHTML = "View Issue";
 
+
+        ViewIssue.addEventListener('click',async (e) => {
+            var id = e.target.getAttribute('id');
+            // var response = await fetch(`/get_issues/${id}`);
+            window.location.href = `/get_issues/${id}`;
+            
+        });
+     
+
         Col_div_2.appendChild(ViewIssue);
 
 

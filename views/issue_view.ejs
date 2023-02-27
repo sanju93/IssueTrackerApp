@@ -1,0 +1,72 @@
+<div class = "h2 text-center" >Issues <img src= "https://cdn-icons-png.flaticon.com/512/455/455875.png" height="20px" width="20px"/></div>
+<link rel = "stylesheet" href="/css/view_issue.css">
+
+
+<div class="container">
+
+    <% for (var i in Issues) {%>
+
+
+        <div id = "issue">
+
+       
+
+       
+    
+        <div class="row ">
+            <div class = "col-6 mb-2">
+               <span>Issue ID: <%= i %></span> 
+            </div>
+         </div>
+            <div class = "row">
+                <div class="col-3">
+                   Description : <%= Issues[i].desc %>
+
+                </div>
+                <div class="col-3">
+                    Severity : <%= Issues[i].severity %>
+
+                </div>
+
+                <div class="col-3">
+                    Assign to : <%= Issues[i].assign %>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+
+        
+        
+    <%}%>
+
+     <input type = "button" class="btn btn-danger my-4" value = "Resolve">
+
+    </div>
+
+
+    <script src = "/js/view_issue.js"></script>
+
+
+
+ 
+
+ 
+
+
+           
+
+
+                
+      
+
+
+         
+       
+    
+  
+
+
+
