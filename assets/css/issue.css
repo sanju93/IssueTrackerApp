@@ -1,6 +1,4 @@
 body{
     font-family: cursive;
-}
-.container{
-    background-color: #cee0f2;
+    background-image: linear-gradient(180deg,red,blue);
 }

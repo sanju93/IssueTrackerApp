@@ -1,26 +1,26 @@
-<div class = "h2 text-center" >Issues <img src= "https://cdn-icons-png.flaticon.com/512/455/455875.png" height="20px" width="20px"/></div>
+<div class = "h2 text-center mt-4" style="text-shadow: 2px 2px 8px yellow;;">Issues <img src= "https://cdn-icons-png.flaticon.com/512/455/455875.png" height="20px" width="20px"/></div>
 <link rel = "stylesheet" href="/css/view_issue.css">
 
 
 <div class="container">
 
-    <input type = "button" class="btn btn-primary mb-5" id = "home" value = "Back To Home">
+    <input type = "button" class="btn btn-primary mb-5" id = "home" value = "<-- Go To Home">
 
     <% for (var i in Issues) {%>
 
 
-        <div id = "issue">
+        <div id = "issue" class="rounded-2">
 
        
 
        
     
         <div class="row ">
-            <div class = "col-6 mb-2">
+            <div class = "col-6 mb-2 mx-2">
                <span>Issue ID: <%= i %></span> 
             </div>
          </div>
-            <div class = "row">
+            <div class = "row mx-2">
                 <div class="col-3">
                    Description : <%= Issues[i].desc %>
 

@@ -1,4 +1,4 @@
-document.getElementsByClassName('container')[0].style.backgroundColor = "#cee0f2";
+document.getElementsByClassName('container')[0].style.backgroundColor = "white";
 var projects = document.getElementsByClassName('container')[1];
 window.addEventListener("load",() => {
     fetch("/projects")
@@ -7,8 +7,9 @@ window.addEventListener("load",() => {
     for (var i of data) {
 
         var Row_div = document.createElement('div');
-        Row_div.setAttribute('class','row my-2');
-        Row_div.style.backgroundColor = "#bbbfc4";
+        Row_div.setAttribute('class','row my-2 rounded-5');
+        Row_div.style.backgroundColor = "white";
+        
         var Col_div = document.createElement('div');
         Col_div.setAttribute("class","col-4");
         var project_img = document.createElement('img');
