@@ -11,7 +11,7 @@ const routes = require('./routes/index');
 const express_ejs_layout = require('express-ejs-layouts');
 app.use(express_ejs_layout);
 app.use(express.static('./assets'));
-const db = require('./config/mongoose');
+require('./config/mongoose');
 
 
 app.set('view engine','ejs');

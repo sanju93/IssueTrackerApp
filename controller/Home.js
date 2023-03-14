@@ -1,6 +1,11 @@
 const { findByIdAndUpdate } = require('../models/Issue');
+
+//models
 const Issue = require('../models/Issue');
 const Project = require('../models/Project');
+
+
+
 module.exports.home = (req,res) => {
     return res.render('home');
 }
@@ -9,7 +14,7 @@ module.exports.getIssue = (req,res) => {
     return res.render('issue');
 }
 
-
+// adding project
 module.exports.createProject = async (req,res) => {
     
     try{
@@ -31,7 +36,7 @@ module.exports.createProject = async (req,res) => {
     return res.redirect('back');
 }
 
-
+//getting projects
 module.exports.fetchProjects = async (req,res) => {
 
     try{
@@ -52,7 +57,7 @@ module.exports.fetchProjects = async (req,res) => {
 
 
 
-
+// creating issues
 module.exports.createIssue = async (req,res) => {
 
 
@@ -86,6 +91,8 @@ module.exports.createIssue = async (req,res) => {
    
 }
 
+
+// getting issue
 module.exports.getIssues = async (req,res) => {
 
     try{
@@ -122,6 +129,8 @@ module.exports.getIssues = async (req,res) => {
 }
 
 
+//resolving issue
+
 module.exports.resolveIssue =  async (req,res) => {
     try{
 
@@ -150,6 +159,8 @@ module.exports.resolveIssue =  async (req,res) => {
 
 }
 
+
+// delete project
 module.exports.deleteProject = async (req,res) => {
 
     var project = await Project.findById(req.params.id);

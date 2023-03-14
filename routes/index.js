@@ -9,6 +9,8 @@ router.get('/create_issue/:id',Home_Controller.getIssue);
 router.post('/create_issue',Home_Controller.createIssue);
 router.get('/get_issues/:id',Home_Controller.getIssues);
 
+
+
 router.delete(`/resolve_issue/:id`,Home_Controller.resolveIssue);
 router.delete(`/delete_project/:id`,Home_Controller.deleteProject);
 
